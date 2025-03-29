@@ -1,0 +1,47 @@
+.nav {
+  @extend %h4;
+
+  letter-spacing: 3px;
+  padding-top: 50px;
+
+  @include on-small-desktop {
+    padding-top: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-transform: uppercase;
+    width: 100%;
+
+    @include on-small-desktop {
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    @include hover(color $blue-color);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 2px;
+      width: 100%;
+      transform: scaleX(0);
+      background-color: $blue-color;
+      z-index: 5;
+      transition: transform $effectDuration ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.slider {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100%;
+  height: 390px;
+  margin-top: 48px;
+
+  @include on-tablet {
+    margin-top: 147px;
+  }
+
+  @include on-small-desktop {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: auto;
+    margin-top: 120px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  @include on-the-design {
+    width: 43%;
+  }
+
+  @include on-large-screen {
+    width: 46%;
+  }
+
+  &__wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 1s ease;
+  }
+
+  &__slide {
+    min-width: 100%;
+    height: 100%;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+
+    @include on-tablet {
+      bottom: 32px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__button--prev,
+  &__button--next {
+    cursor: pointer;
+
+    @include hover(scale 1.2);
+  }
+
+  &__intro {
+    @extend %h4;
+
+    line-height: 100%;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $header-text-color;
+    padding-top: 16px;
+  }
+
+  &__text {
+    @extend %p;
+
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: $header-text-color;
+    padding-top: 8px;
+  }
+}

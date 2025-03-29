@@ -1,0 +1,14 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: $light-blue-color;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+
+  &:has(&__menu:target) {
+    overflow: hidden;
+  }
+}

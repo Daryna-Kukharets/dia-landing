@@ -1,0 +1,21 @@
+.el-anim {
+  opacity: 0;
+  transition: transform $animation-duration ease;
+
+  &--left {
+    transform: translateX(-20%);
+  }
+
+  &--right {
+    transform: translateX(20%);
+  }
+
+  &--down {
+    transform: translateY(20%);
+  }
+
+  &.el-show {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

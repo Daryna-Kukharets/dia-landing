@@ -1,0 +1,102 @@
+.header {
+  background-color: $header-color;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  position: relative;
+
+  @include on-small-desktop {
+    min-height: 100vh;
+    max-height: max-content;
+  }
+
+  &__container {
+    @include container;
+
+    @include on-small-desktop {
+      grid-column: span 5;
+    }
+
+    &--middle {
+      @include on-small-desktop {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  &__desktop {
+    overflow-x: hidden;
+
+    @include on-small-desktop {
+      @include page-grid;
+      @include container;
+    }
+  }
+
+  &__middle {
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-small-desktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+
+    color: $header-text-color;
+    padding-top: 48px;
+
+    @include on-tablet {
+      grid-column: span 6;
+      font-size: 64px;
+      padding-top: 56px;
+    }
+
+    @include on-small-desktop {
+      padding-top: 164px;
+    }
+  }
+
+  &__subtitle {
+    @extend %p;
+
+    color: $header-text-color;
+    padding-top: 32px;
+
+    @include on-tablet {
+      grid-column: span 6;
+      font-size: 18px;
+      padding-top: 24px;
+    }
+
+    @include on-small-desktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__button {
+    @extend %button;
+
+    height: 50px;
+    margin-top: 72px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-color;
+    border-radius: 8px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin-top: 56px;
+    }
+
+    @include on-small-desktop {
+      width: 264px;
+      margin-top: 83px;
+      margin-bottom: 50px;
+    }
+  }
+}

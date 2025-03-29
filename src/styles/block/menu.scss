@@ -1,0 +1,63 @@
+.menu {
+  box-sizing: border-box;
+
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all $effectDuration ease;
+  opacity: 0;
+  background-color: $header-color;
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: 5;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  @include on-tablet {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: all;
+  }
+
+  @include on-small-desktop {
+    position: static;
+    opacity: 1;
+    background-color: none;
+    transform: translateX(0);
+    height: auto;
+  }
+
+  &__box {
+    @include container;
+
+    padding-top: 20px;
+    height: 100vh;
+
+    @include on-tablet {
+      background-color: $header-color;
+      width: 40%;
+    }
+
+    @include on-small-desktop {
+      padding: 0;
+      margin: 0;
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include on-small-desktop {
+      display: none;
+    }
+  }
+}
